@@ -1,0 +1,13 @@
+%header
+  %nav.navbar.navbar-inverse.navbar-static-top
+    .container-fluid
+      .navbar-header
+        %a.navbar-brand{:href => "#"} Booking System
+      .navbar-custom-menu
+        .sidenav-ticker
+          %i.fa.fa-bars{"aria-hidden" => "true"}
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            = link_to "Sign Out", destroy_user_session_path, method: :delete
+
+

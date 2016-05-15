@@ -1,0 +1,17 @@
+.login-wrapper
+  .login-header
+    %strong Booking
+    System
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .form-group
+      = f.label :username
+      %br/
+      = f.text_field :username, autofocus: true, class: "form-control"
+    .form-group
+      = f.label :password
+      %br/
+      = f.password_field :password, autocomplete: "off", class: "form-control"
+    = f.submit "Log in", class:"btn btn-primary pull-right"
+    %br/
+  .panel-footer
+    = render "devise/shared/links"

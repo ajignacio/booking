@@ -1,0 +1,138 @@
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+#
+# Examples:
+#
+#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+User.create(email:"test@yahoo.com", username:"mulo", password:"test123456", password_confirmation: "test123456", first_name:"test", last_name:"test2", middle_name:'test', age:24, address:"Philippines", is_male:true)
+
+Subscription.create(user_id: User.find_by_username("mulo").id, lesson_id: Lesson.find_by_topic("Lesson 1: Oral Reading").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(1).id, time_start: DateTime.parse("08:00"), time_end: DateTime.parse("08:30"), sched_date: Date.today, status: "booked")
+
+
+Subscription.create(user_id: User.find_by_username("alvin").id, lesson_id: Lesson.find_by_topic("Lesson 1: Oral Reading").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(1).id, time_start: DateTime.parse("08:30"), time_end: DateTime.parse("09:00"), sched_date: Date.today, status: "booked")
+
+Subscription.create(user_id: User.find_by_username("karla").id, lesson_id: Lesson.find_by_topic("Lesson 1: Oral Reading").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(1).id, time_start: DateTime.parse("09:00"), time_end: DateTime.parse("09:30"), sched_date: Date.today, status: "booked")
+
+Subscription.create(user_id: User.find_by_username("mercy").id, lesson_id: Lesson.find_by_topic("Lesson 1: Oral Reading").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(1).id, time_start: DateTime.parse("09:30"), time_end: DateTime.parse("10:00"), sched_date: Date.today, status: "booked")
+
+Subscription.create(user_id: User.find_by_username("silvia").id, lesson_id: Lesson.find_by_topic("Lesson 1: Oral Reading").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(1).id, time_start: DateTime.parse("10:00"), time_end: DateTime.parse("10:30"), sched_date: Date.today, status: "booked")
+
+Subscription.create(user_id: User.find_by_username("silvia").id, lesson_id: Lesson.find_by_topic("Lesson 2: Present Tense").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(1).id, time_start: DateTime.parse("10:30"), time_end: DateTime.parse("11:00"), sched_date: Date.today, status: "booked")
+
+Subscription.create(user_id: User.find_by_username("silvia").id, lesson_id: Lesson.find_by_topic("Lesson 3: Informal Speech").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(1).id, time_start: DateTime.parse("20:30"), time_end: DateTime.parse("21:00"), sched_date: Date.today, status: "booked")
+
+Subscription.create(user_id: User.find_by_username("silvia").id, lesson_id: Lesson.find_by_topic("Lesson 4: Blending").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(1).id, time_start: DateTime.parse("22:30"), time_end: DateTime.parse("23:00"), sched_date: Date.today, status: "booked")
+
+Subscription.create(user_id: User.find_by_username("silvia").id, lesson_id: Lesson.find_by_topic("Lesson 7: Fluency Liners").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(2).id, time_start: DateTime.parse("21:00"), time_end: DateTime.parse("21:30"), sched_date: Date.today, status: "booked")
+
+
+
+
+
+Subscription.create(user_id: User.find_by_username("bernie").id, lesson_id: Lesson.find_by_topic("Lesson 1: Oral Reading").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(2).id, time_start: DateTime.parse("10:00"), time_end: DateTime.parse("10:30"), sched_date: Date.today, status: "booked")
+
+Subscription.create(user_id: User.find_by_username("bernie").id, lesson_id: Lesson.find_by_topic("Lesson 2: Present Tense").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(3).id, time_start: DateTime.parse("10:30"), time_end: DateTime.parse("11:00"), sched_date: Date.today, status: "booked")
+
+Subscription.create(user_id: User.find_by_username("bernie").id, lesson_id: Lesson.find_by_topic("Lesson 3: Informal Speech").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(4).id, time_start: DateTime.parse("20:30"), time_end: DateTime.parse("21:00"), sched_date: Date.today, status: "booked")
+
+Subscription.create(user_id: User.find_by_username("bernie").id, lesson_id: Lesson.find_by_topic("Lesson 4: Blending").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(4).id, time_start: DateTime.parse("22:30"), time_end: DateTime.parse("23:00"), sched_date: Date.today, status: "booked")
+
+Subscription.create(user_id: User.find_by_username("bernie").id, lesson_id: Lesson.find_by_topic("Lesson 7: Fluency Liners").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(4).id, time_start: DateTime.parse("21:00"), time_end: DateTime.parse("21:30"), sched_date: Date.today, status: "booked")
+
+
+
+
+
+
+
+Subscription.create(user_id: User.find_by_username("chuck").id, lesson_id: Lesson.find_by_topic("Lesson 1: Oral Reading").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(3).id, time_start: DateTime.parse("10:00"), time_end: DateTime.parse("10:30"), sched_date: Date.today, status: "booked")
+
+Subscription.create(user_id: User.find_by_username("chuck").id, lesson_id: Lesson.find_by_topic("Lesson 2: Present Tense").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(4).id, time_start: DateTime.parse("10:30"), time_end: DateTime.parse("11:00"), sched_date: Date.today, status: "booked")
+
+Subscription.create(user_id: User.find_by_username("chuck").id, lesson_id: Lesson.find_by_topic("Lesson 3: Informal Speech").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(3).id, time_start: DateTime.parse("20:30"), time_end: DateTime.parse("21:00"), sched_date: Date.today, status: "booked")
+
+Subscription.create(user_id: User.find_by_username("chuck").id, lesson_id: Lesson.find_by_topic("Lesson 4: Blending").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(3).id, time_start: DateTime.parse("22:30"), time_end: DateTime.parse("23:00"), sched_date: Date.today, status: "booked")
+
+Subscription.create(user_id: User.find_by_username("chuck").id, lesson_id: Lesson.find_by_topic("Lesson 7: Fluency Liners").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(3).id, time_start: DateTime.parse("21:00"), time_end: DateTime.parse("21:30"), sched_date: Date.today, status: "booked")
+
+
+
+
+
+Subscription.create(user_id: User.find_by_username("aiko").id, lesson_id: Lesson.find_by_topic("Lesson 1: Oral Reading").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(6).id, time_start: DateTime.parse("10:00"), time_end: DateTime.parse("10:30"), sched_date: Date.today, status: "booked")
+
+Subscription.create(user_id: User.find_by_username("aiko").id, lesson_id: Lesson.find_by_topic("Lesson 2: Present Tense").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(6).id, time_start: DateTime.parse("10:30"), time_end: DateTime.parse("11:00"), sched_date: Date.today, status: "booked")
+
+Subscription.create(user_id: User.find_by_username("aiko").id, lesson_id: Lesson.find_by_topic("Lesson 3: Informal Speech").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(6).id, time_start: DateTime.parse("20:30"), time_end: DateTime.parse("21:00"), sched_date: Date.today, status: "booked")
+
+Subscription.create(user_id: User.find_by_username("aiko").id, lesson_id: Lesson.find_by_topic("Lesson 4: Blending").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(6).id, time_start: DateTime.parse("22:30"), time_end: DateTime.parse("23:00"), sched_date: Date.today, status: "booked")
+
+Subscription.create(user_id: User.find_by_username("aiko").id, lesson_id: Lesson.find_by_topic("Lesson 7: Fluency Liners").id, status: "subscribed")
+
+Schedule.create(subscription_id: Subscription.last.id, teacher_id: Teacher.find(6).id, time_start: DateTime.parse("21:00"), time_end: DateTime.parse("21:30"), sched_date: Date.today, status: "booked")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

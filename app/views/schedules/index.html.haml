@@ -1,0 +1,52 @@
+.page-container
+  .row
+    .col-lg-12
+      = form_tag '/schedules', method: 'get' do
+        %table.table
+          %tr.text-center
+            %td{colspan: 3} Seach Form
+          %tr
+            %td.form-group.text-center
+              Teacher
+              = text_field_tag 'teacher'
+            %td.form-group.text-center
+              Nationality
+              = text_field_tag 'national'
+            %td.form-group.text-center
+              Gender
+              = radio_button_tag 'is_male', true, checked:true
+              = label_tag('is_male_true', "Male")
+              = radio_button_tag 'is_male', false
+              = label_tag('is_male_false', "Female")
+          %tr
+            %td{colspan:3}
+              .pull-right
+                = submit_tag "Search", class:"btn btn-default"
+      %br
+      %table.table
+        %tr.text-center
+          %td Time
+          %td{colspan: 3} Teachers
+        %tr
+          %td.col-md-3
+            %br/
+            %br/
+            - (@from..@to).step(1800).each do |h|
+              - if DateTime.now().strftime("%H:%M") <= Time.at(h).strftime("%H:%M")
+                %p="#{Time.at(h).strftime('%H:%M')} -  #{(Time.at(h) + 30.minutes).strftime('%H:%M')}"
+                %br/
+          - @teacher.each do |t|
+            %td.col-md-3
+              = t[:name]
+              %br/
+              %br/
+              - t[:avail_schedule].each do |sched|
+                - if sched[:sched_trig]
+                  %p= "UnAvailable"
+                - else
+                  %p= link_to "Available", lesson_schedule_path(sched: sched[:data], id: t[:teacher_id])
+                %br/
+
+  .row
+    .col-lg-12
+      .text-center= will_paginate @teacher

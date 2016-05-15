@@ -1,0 +1,4 @@
+class AddStatusToSchedule < ActiveRecord::Migration
+  def change
+  end
+end

@@ -1,0 +1,13 @@
+.side-nav
+  .sidenav-header 
+    Main Navigation
+  %ul
+    %li
+      %a{:href => "/"}
+        %span Dashboard
+    %li.active.has-sub
+      = link_to "Subscription", subscriptions_path
+    %li.active
+      = link_to "Schedule", schedules_path
+
+

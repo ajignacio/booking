@@ -1,0 +1,24 @@
+#myModal.modal.fade{"aria-labelledby" => "myModalLabel", role: "diaglog", tabindex: "-1"}
+  .modal-dialog{role: "document"}
+    .modal-content
+      .modal-header
+        %h4#myModalLabel.modal-title Choose Lesson for Schedule
+        .modal-body
+          = form_tag('/build_schedule') do
+            .form-group
+              %p= "Teacher: #{@teacher.teacher_name}"
+              %p
+                = "Time: #{params[:sched]}"
+                = hidden_field_tag "time", params[:sched]
+                = hidden_field_tag "teacher", @teacher.id
+            .form-group
+              = select_tag "lesson", options_for_select(@subscribed.collect{|a| [a.lesson.topic, a.id] }), class: "form-control"
+            = submit_tag "Save", class:"btn btn-primary pull-right"
+            %br/
+        .modal-footer
+          %p.pull-left= link_to "Change Schedule Time", schedules_path
+
+:javascript
+  $(window).load(function(){
+    $('#myModal').modal({backdrop: 'static', keyboard: false})
+  });

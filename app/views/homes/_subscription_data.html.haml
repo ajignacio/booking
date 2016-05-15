@@ -1,0 +1,18 @@
+%table.table
+  %tr
+    %td Teacher
+    %td Lesson
+    %td Time
+    %td
+  - @subscription.each do |subscribe|
+    %tr
+      %td= subscribe[:teacher]
+      %td= subscribe[:lesson]
+      %td= "#{subscribe[:time_start].strftime('%H:%M')} - #{subscribe[:time_end].strftime('%H:%M')}"
+      %td
+        - if subscribe[:status] == "scheduled"
+          = link_to "Cancel", cancel_subscription_path(id: subscribe[:subs_id]), class:"btn btn-default"
+        - elsif subscribe[:status] == "subscribed"
+          = "Canceled"
+        - elsif subscribe[:status] == "canceled"
+          = "Canceled"

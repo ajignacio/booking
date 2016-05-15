@@ -1,0 +1,37 @@
+.page-container
+  .row
+    .col-lg-12
+      - if !@subscription.present?
+        = render 'first_timer'
+      - else
+      .box-header.with-border
+        %h3.box-title Incoming Lessons
+      .box-body
+        %table.table
+          %tr
+            %td Teacher
+            %td Lesson
+            %td Time
+            %td
+          - @subscription.each do |subscribe|
+            %tr
+              %td= subscribe[:teacher]
+              %td= subscribe[:lesson]
+              %td= "#{subscribe[:time_start].strftime('%H:%M')} - #{subscribe[:time_end].strftime('%H:%M')}"
+              %td
+                - if subscribe[:status] == "scheduled"
+                  = link_to "Cancel", '#', class:"btn btn-default", onclick: "cancelLesson();"
+                - elsif subscribe[:status] == "canceled"
+                  = "Canceled"
+
+
+
+:javascript
+  $(window).load(function(){
+    $('#myModal').modal({backdrop: 'static', keyboard: false})
+    //.modal('show');
+  });
+
+  function cancelLesson(){
+    alert("Cancel");
+  }

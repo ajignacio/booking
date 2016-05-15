@@ -1,0 +1,17 @@
+.page-container
+  .row
+    .col-lg-12
+      .box-header.with-border
+        %h3.box-title Subscribed Lesson
+        .pull-right
+          .btn.btn-primary{"data-target" => "#myModal", "data-toggle" => "modal", :href => "#", :type => "button"} Add new Lesson
+          = render 'new_subscription'
+      .box-body
+        %table.table
+          %tr
+            %td Lesson
+            %td Status
+          - @subscription.each do |subs|
+            %tr
+              %td= subs.lesson.topic
+              %td= subs.status

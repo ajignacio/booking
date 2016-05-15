@@ -1,0 +1,47 @@
+.login-wrapper
+  .login-header
+    %strong Sign up
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = devise_error_messages!
+    .form-group
+      = f.label :email
+      = f.email_field :email, autofocus: true, class: "form-control"
+    .form-group
+      = f.label :username
+      = f.text_field :username, class: "form-control"
+    .form-group
+      = f.label :password
+      - if @minimum_password_length
+        %em
+          (#{@minimum_password_length} characters minimum)
+      = f.password_field :password, autocomplete: "off", class: "form-control"
+    .form-group
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
+    .form-group
+      = f.label :first_name
+      = f.text_field :first_name, class: "form-control"
+    .form-group
+      = f.label :last_name
+      = f.text_field :last_name, class: "form-control"
+    .form-group
+      = f.label :middle_name
+      = f.text_field :middle_name, class: "form-control"
+    .form-group
+      = f.label :age
+      = f.text_field :age, class: "form-control"
+    .form-group
+      = label :is_male, "Gender"
+      %br
+      = f.radio_button(:is_male, true)
+      = label(:user_is_male,true, "Male")
+      \#{f.radio_button(:is_male, false, checked: true)}
+      = label :user_is_male, false, "Female"
+    .form-group
+      = f.label :address
+      (please include you country)
+      = f.text_area :address, cols: 5, rows: 5, class: "form-control"
+    %br
+      = f.submit "Sign up", class: "btn btn-primary pull-right"
+  .panel-footer
+    = render "devise/shared/links"

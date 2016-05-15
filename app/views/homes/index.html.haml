@@ -1,0 +1,19 @@
+.page-container
+  .row
+    .col-lg-12
+      - if !@subscription.present?
+        = render 'first_timer'
+      - else
+      .box-header.with-border
+        %h3.box-title Incoming Lessons
+      .box-body
+        = render 'subscription_data'
+
+
+
+:javascript
+  $(window).load(function(){
+    $('#myModal').modal({backdrop: 'static', keyboard: false})
+    //.modal('show');
+  });
+

@@ -1,0 +1,13 @@
+#myModal.modal.fade{"aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-content
+      .modal-header
+        %h4#myModalLabel.modal-title Please choose your next lesson
+      .modal-body
+        %table.table
+          - @lesson.each do |l|
+            %tr
+              %td.text-center= link_to l.topic, subscribe_path(id: l.id)
+      .modal-footer
+
+
